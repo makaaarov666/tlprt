@@ -4,9 +4,13 @@ import "./Header.scss";
 const Header = () => {
   return (
     <header className="header">
-      asdq
-      <div className="items"></div>
-      <div className="logo"></div>
+      <input placeholder="Search for a city" className="search-panel"></input>
+      <a href="/" className="logo">
+        <img
+          src="https://developers.teleport.org/assets/logo.e663724a.svg"
+          alt="teleportLogo"
+        />
+      </a>
     </header>
   );
 };
