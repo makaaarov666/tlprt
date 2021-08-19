@@ -4,10 +4,9 @@ import "./Header.scss";
 const Header = () => {
   return (
     <header className="header">
-      <div className="item">
-        <form></form>
-      </div>
-      <div className="logo">asd</div>
+      asdq
+      <div className="items"></div>
+      <div className="logo"></div>
     </header>
   );
 };
