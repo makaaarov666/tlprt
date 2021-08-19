@@ -19,6 +19,12 @@ module.exports = {
   },
   plugins: ["react"],
   rules: {
-    "prettier/prettier": ["error", { endOfLine: "auto" }],
+    "prettier/prettier": [
+      "error",
+      {
+        endOfLine: "auto",
+        singleQuote: false,
+      },
+    ],
   },
 };
