@@ -1,0 +1,15 @@
+.contentItem {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.contents{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  margin-left: 40px;
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,43 @@
+.searchBar {
+    display: none;
+    position: absolute;
+    margin-left: 3.5rem;
+    margin-top: 3.4rem;
+    flex-direction: column;
+    background-color: white;
+    &.open{
+        display: flex;
+    }
+}
+
+.searchBarBackground{
+    display: none;
+    &.open{
+        display: flex;
+        position: absolute;
+        height: 100vh;
+        width: 100%;    
+    }
+}
+
+.button {
+    font-family: Josefin;
+    font-weight: 300;
+    width: 100%;
+    height: 100%;
+    color: black;
+    border: none;
+    text-decoration: none;
+    text-align: left;
+    &:hover {
+        color: rgb(89, 118, 199);
+    }
+}
+
+.li {
+    display: flex;
+    align-items: center; 
+    height: 2.5rem;
+    width: 10em;
+    list-style: none;
+}

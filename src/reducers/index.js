@@ -1,16 +1,9 @@
-const initialState = {
-  ciites: [],
-};
+import { applyMiddleware, createStore } from "redux";
+import thunk from "redux-thunk";
+import { composeWithDevTools } from "redux-devtools-extension";
 
-const reducer = (state = initialState, action) => {
-  switch (action.type) {
-    case "CITIES_LOADED":
-      return {
-        ciites: action.payload,
-      };
-    default:
-      return state;
-  }
-};
+import reducer from "./reducer";
 
-export default reducer;
+const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
+
+export default store;

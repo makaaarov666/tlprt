@@ -1,5 +1,4 @@
 module.exports = {
-  parser: "babel-eslint",
   env: {
     browser: true,
     es2021: true,
@@ -10,6 +9,8 @@ module.exports = {
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:prettier/recommended",
+    "eslint-config-prettier",
+    "prettier",
   ],
   parserOptions: {
     ecmaFeatures: {
@@ -26,5 +27,6 @@ module.exports = {
         endOfLine: "auto",
       },
     ],
+    "arrow-body-style": ["error", "as-needed"],
   },
 };

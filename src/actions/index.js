@@ -1,8 +1,17 @@
-const citiesLoaded = (allCities) => {
-  return {
-    type: "CITIES_LOADED",
-    payload: allCities,
-  };
-};
+import { fetchGeonames } from "./getGeonamesAction";
+import { fetchCity } from "./getCityActions";
+import { fetchDetails } from "./getDetailsActions";
+import { fetchImage } from "./getCityImage";
+import { fetchCityInfo } from "./getCityInfoAction";
+import { fetchSalaries } from "./getSalariesActions";
+import { fetchTaxation } from "./getCityTaxations";
 
-export { citiesLoaded };
+export {
+  fetchGeonames,
+  fetchCity,
+  fetchDetails,
+  fetchImage,
+  fetchCityInfo,
+  fetchSalaries,
+  fetchTaxation,
+};

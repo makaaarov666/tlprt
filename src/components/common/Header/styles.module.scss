@@ -1,0 +1,22 @@
+.header {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 3.4rem;
+    background-color: white;
+    border-bottom: solid 1px black;
+    display:flex;
+}
+
+.logo {
+    transform: translateX(-50%);
+    left: 50%;
+    position: absolute;
+    height: 3.4rem;
+}
+
+.logoImg{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
