@@ -1,10 +1,11 @@
 import React from "react";
-import PropTypes, { string } from "prop-types";
+import { string, node } from "prop-types";
 
 import styles from "./styles.module.scss";
 
-const ContentItem = ({ title, children }) => (
+const ContentItem = ({ title, id, children }) => (
   <div className={styles.contentItem}>
+    <section id={id} />
     <h2>
       <span>{title}</span>
     </h2>
@@ -14,7 +15,8 @@ const ContentItem = ({ title, children }) => (
 
 ContentItem.propTypes = {
   title: string,
-  children: PropTypes.node.isRequired,
+  id: string,
+  children: node.isRequired,
 };
 
 export default ContentItem;

@@ -1,32 +1,33 @@
-.table{
-	width: 100%;
-    margin: 1rem 0px;
-    margin-left: 40px;
-	border-collapse:collapse;
-	border-spacing:0;
-	height: auto;
+@import "styles/colors.scss";
+@import "styles/global.scss";
+
+.table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
-.table td, .table th {
-    padding-right: 10px;
-	padding: 1rem;
-	width: 10px;
-	height: 30px;
-	text-align: start;
-}
+.table td,
 .table th {
-    font-size: 20px;
-	background: #ffffff; 
-	color: rgb(0, 0, 0); 
-	font-weight: normal;
+  padding-right: 10px;
+  padding: 1rem;
+  width: 10px;
+  height: 30px;
+  text-align: start;
 }
 
-.discription{
-	font-weight: 300;
-	vertical-align: top;
-	font-size: 20px;
+.table th {
+  vertical-align: top;
+  font-size: $font-small;
+  color: $BLACK;
+  font-weight: normal;
 }
 
-.value{
-	font-size: 30px;
+.discription {
+  font-weight: 300;
+  vertical-align: top;
+  font-size: $font-small;
+}
+
+.value {
+  font-size: $font-large;
 }

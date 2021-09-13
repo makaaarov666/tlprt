@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { func, number, string } from "prop-types";
+import { func, string } from "prop-types";
 import { connect } from "react-redux";
 
 import { fetchCityInfo, fetchImage } from "actions";
@@ -26,7 +26,6 @@ const CityInfo = ({ geonameId, fetchCityInfo, image, nameCity }) => {
 };
 
 CityInfo.propTypes = {
-  population: number,
   nameCity: string,
   geonameId: string,
   fetchCityInfo: func,
@@ -37,7 +36,6 @@ const mapStateToProps = state => ({
   nameCity: selectors.getNameCity(state),
   geonameId: selectors.getGeonameId(state),
   image: selectors.getImage(state),
-  population: selectors.getPopulation(state),
 });
 
 const mapDispatchToProps = dispatch => ({

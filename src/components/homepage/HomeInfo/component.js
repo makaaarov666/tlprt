@@ -5,6 +5,8 @@ import uniqueRandomArray from "unique-random-array";
 
 import selectors from "reducers/selectors";
 
+import getOneSlugHelper from "helpers/getOneSlugHelper";
+
 import { fetchDetails, fetchImage, fetchCityInfo } from "actions";
 
 import Layout from "components/common/Layout";
@@ -16,7 +18,7 @@ const getRandomSlug = city => {
     return null;
   }
   const { href } = oneCity;
-  const oneSlug = href.split("/").slice(5, -1)[0].split(":")[1]; // TODO: вынести в хелпер
+  const oneSlug = getOneSlugHelper(href);
 
   return oneSlug;
 };

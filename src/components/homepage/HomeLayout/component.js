@@ -1,9 +1,11 @@
 import React from "react";
-import { string } from "prop-types";
+import { bool, string } from "prop-types";
+
+import HomeDetail from "../HomeDetails";
 
 import styles from "./styles.module.scss";
 
-const HomeLayout = ({ image, nameCity }) => (
+const HomeLayout = ({ image }) => (
   <>
     <div className={styles.background}>
       <img className={styles.img} src={image}></img>
@@ -21,17 +23,15 @@ const HomeLayout = ({ image, nameCity }) => (
         </span>
       </p>
       <div className={styles.details}>
-        <h1>
-          <span className={styles.detailsName}>{nameCity}</span>
-        </h1>
+        <HomeDetail />
       </div>
     </div>
   </>
 );
-
 HomeLayout.propTypes = {
   image: string,
   nameCity: string,
+  loadingCity: bool,
 };
 
 export default HomeLayout;

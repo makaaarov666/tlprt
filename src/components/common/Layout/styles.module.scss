@@ -1,19 +1,4 @@
-@font-face{
-    font-family: 'Josefin';
-    src: local('Josefin'), url(../../../assets/fonts/JosefinSans-Bold.ttf) format('truetype');
-}
-
-@font-face{
-    font-family: 'Josefin';
-    font-weight: 100;
-    src: local('Josefin'), url(../../../assets/fonts/JosefinSans-Thin.ttf) format('truetype');
-}
-
-@font-face{
-    font-family: 'Josefin';
-    font-weight: 300;
-    src: local('Josefin'), url(../../../assets/fonts/JosefinSans-Light.ttf) format('truetype');
-}
+@import "styles/sizes.scss";
 
 .layout{
     min-height: 45rem;
@@ -24,3 +9,19 @@
     justify-content: center;
     align-items: center;
 }
+
+@media (max-width: $M) {
+  .layout {
+    padding-top: 5rem;
+  }
+}
+
+@media (max-width: $XS) {
+  .layout {
+    min-height: 10rem;
+  }
+}
+
+
+
+  

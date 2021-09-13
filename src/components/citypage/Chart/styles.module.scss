@@ -1,6 +1,18 @@
+@import "styles/global.scss";
+
 .discription {
+    font-size: $font-small;
+    font-weight: 300;
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
   }
+
+.chartContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+

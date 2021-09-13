@@ -1,3 +1,5 @@
+@import "styles/sizes.scss";
+
 .contentItem {
   width: 100%;
   display: flex;
@@ -5,11 +7,18 @@
   justify-content: flex-start;
 }
 
-.contents{
+.contents {
   position: relative;
   display: flex;
   flex-direction: row;
   margin-left: 40px;
   width: 100%;
-  height: 100%;
+  padding-bottom: 100px;
+}
+
+@media (max-width: $XS) {
+  .contents {
+    margin-left: 20px;
+    padding-bottom: 40px;
+  }
 }

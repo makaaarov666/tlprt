@@ -1,9 +1,18 @@
+@import "styles/sizes.scss";
+@import "styles/global.scss";
+@import "styles/global.scss";
+
 .aboutList {
-    font-family: Josefin;
-    font-size: 20px;
-    font-weight: 300;
+    font-size: $font-small;
     list-style: none;
+    padding: 0 3rem 0 0;
     li {
       margin-bottom: 1rem;
     }
   }
+
+@media (max-width: $XS) {
+  .aboutList {
+    padding: 0 1rem 0 0;
+  }
+}

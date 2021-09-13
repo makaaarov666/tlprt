@@ -1,46 +1,43 @@
+import { number, string } from "prop-types";
 import React from "react";
 import { connect } from "react-redux";
 import selectors from "reducers/selectors";
 
 import styles from "./styles.module.scss";
 
-const breakdown = ({ nameCity }, number) => {
+const About = ({ nameCity, population }) => {
   if (!nameCity) {
     return null;
   }
 
-  const result = nameCity.split(",")[number];
-
-  return result;
-};
-
-const About = nameCity => {
-  const adminDivision = breakdown(nameCity, 1);
-  const cityName = breakdown(nameCity, 0);
-  const country = breakdown(nameCity, 2);
+  const [adminDivision, cityName, country] = nameCity.split(",");
 
   return (
     <>
       <ul className={styles.aboutList}>
         <li>City Name:</li>
-        <li>Country of location:</li>
-        <li>Admin division: </li>
+        <li>Country:</li>
+        <li>Region: </li>
         <li>Population: </li>
       </ul>
       <ul className={styles.aboutList}>
         <li>{cityName}</li>
         <li>{country}</li>
         <li>{adminDivision}</li>
-        {/* <li>{population}</li> */}
+        <li>{population}</li>
       </ul>
     </>
   );
 };
 
+About.propTypes = {
+  nameCity: string,
+  population: number,
+};
+
 const mapStateToProps = state => ({
-  nameCity: selectors.getNameCity(state),
-  geonameId: selectors.getGeonameId(state),
   population: selectors.getPopulation(state),
+  nameCity: selectors.getNameCity(state),
 });
 
 export default connect(mapStateToProps)(About);

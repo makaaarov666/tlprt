@@ -15,22 +15,27 @@ import ErrorIndicator from "components/common/ErrorIndicator";
 
 import store from "./reducers/index";
 
-import "./styles/normalize.css";
+import "./styles/global.scss";
+
+import { Normalize } from "styled-normalize";
 
 const App = () => (
-  <Provider store={store}>
-    <ErrorBoundary FallbackComponent={ErrorIndicator}>
-      <Router>
-        <InfoLoader>
-          <Switch>
-            <Route path="/details" component={CityPage} />
-            <Route path="/" component={HomePage} />
-            <Redirect to="/" />
-          </Switch>
-        </InfoLoader>
-      </Router>
-    </ErrorBoundary>
-  </Provider>
+  <>
+    <Provider store={store}>
+      <Normalize />
+      <ErrorBoundary FallbackComponent={ErrorIndicator}>
+        <Router>
+          <InfoLoader>
+            <Switch>
+              <Route path="/details" component={CityPage} />
+              <Route path="/" component={HomePage} />
+              <Redirect to="/" />
+            </Switch>
+          </InfoLoader>
+        </Router>
+      </ErrorBoundary>
+    </Provider>
+  </>
 );
 
 export default App;

@@ -2,7 +2,10 @@ import React from "react";
 import { Map, GoogleApiWrapper } from "google-maps-react";
 import { object } from "prop-types";
 import { connect } from "react-redux";
+
 import selectors from "reducers/selectors";
+
+import styles from "./styles.module.scss";
 
 const mapStyles = {
   width: "100%",
@@ -10,7 +13,6 @@ const mapStyles = {
 };
 
 const Maps = ({ google, location }) => {
-  console.log(google, location);
   if (!location) {
     return null;
   }
@@ -18,13 +20,15 @@ const Maps = ({ google, location }) => {
   const { latitude: lat, longitude: lng } = location;
 
   return (
-    <Map
-      google={google}
-      zoom={10}
-      style={mapStyles}
-      initialCenter={{ lat, lng }}
-      center={{ lat, lng }}
-    />
+    <div className={styles.mapContainer}>
+      <Map
+        google={google}
+        zoom={10}
+        style={mapStyles}
+        initialCenter={{ lat, lng }}
+        center={{ lat, lng }}
+      />
+    </div>
   );
 };
 
@@ -37,6 +41,8 @@ const mapStateToProps = state => ({
   location: selectors.getLocation(state),
 });
 
-export default GoogleApiWrapper({
-  apiKey: `${process.env.REACT_APP_MAP}`,
-})(connect(mapStateToProps)(Maps));
+export default connect(mapStateToProps)(
+  GoogleApiWrapper({
+    apiKey: `${process.env.REACT_APP_MAP}`,
+  })(Maps),
+);

@@ -1,3 +1,5 @@
+import getGeonameIdHelper from "helpers/getGeonameIdHelper";
+import getGeonamesHelper from "helpers/getGeonamesHelper";
 import {
   FETCH_CITY_REQUEST,
   FETCH_CITY_SUCCESS,
@@ -22,14 +24,7 @@ import {
   FETCH_CITY_TAXATION_FAILURE,
 } from "../consts/reducer";
 
-const targetValue = array =>
-  array.map(
-    item =>
-      item.href
-        .split("/")
-        .filter(el => el.toLowerCase().indexOf("geonames".toLowerCase()) > -1)
-        .flat(), // TODO: вынести в хелпер
-  );
+const targetValue = array => array.map(getGeonamesHelper);
 
 const updateCityList = (state, action) => {
   const loading = state.cityList.cityRecived >= 6 ? false : true;
@@ -47,7 +42,7 @@ const updateCityList = (state, action) => {
 };
 
 const getGeonameId = (state, action) => {
-  const geonameId = action.payload.split("/")[5]; // TODO: вынести в хелпер
+  const geonameId = getGeonameIdHelper(action);
 
   return {
     ...state,

@@ -1,22 +1,32 @@
+@import "styles/colors.scss";
+@import "styles/sizes.scss";
+
 .header {
-    position: fixed;
-    z-index: 1;
-    width: 100%;
-    height: 3.4rem;
-    background-color: white;
-    border-bottom: solid 1px black;
-    display:flex;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 3.4rem;
+  background-color: $WHITE;
+  border-bottom: solid 1px $BLACK;
+  display: flex;
 }
 
 .logo {
-    transform: translateX(-50%);
-    left: 50%;
-    position: absolute;
-    height: 3.4rem;
+  transform: translateX(-50%);
+  left: 50%;
+  position: absolute;
+  height: 3.4rem;
 }
 
-.logoImg{
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+.logoImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: $M) {
+  .header {
+    height: 5rem;
+  }
+  .logo {height: 5rem;}
 }

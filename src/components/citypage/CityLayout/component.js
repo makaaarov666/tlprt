@@ -4,14 +4,18 @@ import { string, number } from "prop-types";
 
 import Table from "components/citypage/Table";
 import Chart from "components/citypage/Chart";
-import Maps from "components/citypage/Map";
+import Map from "components/citypage/Map";
 import About from "components/citypage/About";
 import ContentItem from "components/citypage/ContentItem";
+import Menu from "components/citypage/Menu";
 
 import styles from "./styles.module.scss";
 
 const CityLayout = ({ nameCity, image }) => (
   <>
+    <div className={styles.menu}>
+      <Menu />
+    </div>
     <div className={styles.header}>
       <img className={styles.img} src={image}></img>
       <div className={styles.text}>
@@ -21,20 +25,19 @@ const CityLayout = ({ nameCity, image }) => (
       </div>
     </div>
     <div className={styles.content}>
-      <ContentItem title={"About"}>
+      <ContentItem title={"About"} id="about">
         <About />
       </ContentItem>
-      <ContentItem title={"Chart"}>
+      <ContentItem title={"Chart"} id="chart">
         <Chart />
       </ContentItem>
-      <ContentItem title={"Table"}>
+      <ContentItem title={"Table"} id="table">
         <Table />
       </ContentItem>
-      <ContentItem title={"Map"}>
-        <Maps />
+      <ContentItem title={"Map"} id="map">
+        <Map />
       </ContentItem>
     </div>
-    <div className={styles.menu}></div>
   </>
 );
 

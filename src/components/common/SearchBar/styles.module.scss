@@ -1,11 +1,19 @@
+@import 'styles/colors.scss';
+@import "styles/sizes.scss";
+
 .searchPanel {
-    font-family: Jozefin;
-    color: gray;
+    color: $BLACK;
     margin-left: 3.5rem;
     border: none;
     outline: 0;
     outline-offset: 0;
     width: 10em;
+}
+
+@media (max-width: $XS) {
+    .searchPanel {
+        margin-left: 1rem;
+    }
 }
 
 

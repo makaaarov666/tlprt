@@ -1,23 +1,49 @@
 import React from "react";
-import { Link } from "react-router-dom";
-// const menuPoints = [
-//   {
-//     label: "About",
-//     path: "/about",
-//   },
-//   {
-//     label: "About1",
-//     path: "/about2",
-//   },
-// ];
+import { HashLink } from "react-router-hash-link";
+
+import styles from "./styles.module.scss";
+
+const menuPoints = [
+  {
+    label: "About",
+    path: "about",
+    id: "menuPointsAbout",
+  },
+  {
+    label: "Chart",
+    path: "chart",
+    id: "menuPointsChart",
+  },
+  {
+    label: "Table",
+    path: "table",
+    id: "menuPointsTable",
+  },
+  {
+    label: "Map",
+    path: "map",
+    id: "menuPointsMap",
+  },
+];
 
 const Menu = () => (
-  <>
-    <Link>About</Link>
-    <Link>Chart</Link>
-    <Link>Table</Link>
-    <Link>Map</Link>
-  </>
+  <ul className={styles.menu}>
+    {menuPoints.map(({ id, path, label }) => (
+      <HashLink
+        key={id}
+        smooth
+        to={`/details#${path}`}
+        scroll={sectionToScroll =>
+          sectionToScroll.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+          })
+        }
+      >
+        <li key={id}>{label}</li>
+      </HashLink>
+    ))}
+  </ul>
 );
 
 export default Menu;
