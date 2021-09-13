@@ -29,4 +29,12 @@ module.exports = {
     ],
     "arrow-body-style": ["error", "as-needed"],
   },
+  overrides: [
+    {
+      files: ["src/test/*.js"],
+      env: {
+        jest: true,
+      },
+    },
+  ],
 };

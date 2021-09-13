@@ -4,7 +4,6 @@ import selectors from "reducers/selectors";
 import { array, object } from "prop-types";
 
 const getfilterData = (tax, tableConfig) => {
-  console.log(tax);
   const filterData = tax
     .filter(taxation => taxation.type == "percent")
     .map(taxation => {
