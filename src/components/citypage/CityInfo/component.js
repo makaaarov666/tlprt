@@ -19,7 +19,6 @@ const CityInfo = ({ geonameId, fetchCityInfo, image, nameCity, slugCity }) => {
     const slugNumber = getSlugHelper(slugCity);
     setCookie("Slug", slugNumber);
   }, [slugCity]);
-  //useEffect перенести max-age(убрать 3 параметр из функции setCookie)
 
   useEffect(() => {
     if (!geonamesNumber) {

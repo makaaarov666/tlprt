@@ -47,7 +47,7 @@ const HomeInfo = ({
     if (loadingCity) {
       return null;
     }
-    const slug = !getCookie("Slug") ? getRandomSlug(city) : getCookie("Slug");
+    const slug = getCookie("Slug") || getRandomSlug(city);
     fetchDetails(slug);
     fetchImage(slug);
   }, [city]);

@@ -1,0 +1,54 @@
+@import "styles/colors.scss";
+
+.header{
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid $LIGHTGRAY;
+  justify-content: flex-end;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  padding: 1rem 5%;
+  border-top: 1px solid $LIGHTGRAY;
+  justify-content: space-between;
+}
+
+.close {
+  cursor: pointer;
+  padding: 1rem;
+  border: none;
+}
+.body {
+  overflow: hidden;
+  object-fit: cover;
+}
+.text {
+  text-align: center;
+  padding: 1rem;
+}
+
+.img{
+  align-items: center;
+  width: 90%;
+  margin: auto 5%;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slide-in {
+  from {
+    transform: translateY(-150px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
