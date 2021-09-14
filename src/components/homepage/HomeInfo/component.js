@@ -9,6 +9,8 @@ import getOneSlugHelper from "helpers/getOneSlugHelper";
 
 import { fetchDetails, fetchImage, fetchCityInfo } from "actions";
 
+import getCookie from "helpers/cookies/getCookie";
+
 import Layout from "components/common/Layout";
 import HomeLayout from "components/homepage/HomeLayout";
 
@@ -33,13 +35,11 @@ const HomeInfo = ({
   fetchCityInfo,
   nameCity,
 }) => {
-  const slug = getRandomSlug(city);
-  const [, geonamesNumber] = geonameId.split(":");
-
   useEffect(() => {
     if (loadingCity) {
       return null;
     }
+    const [, geonamesNumber] = geonameId.split(":");
     fetchCityInfo(geonamesNumber);
   }, [geonameId]);
 
@@ -47,6 +47,7 @@ const HomeInfo = ({
     if (loadingCity) {
       return null;
     }
+    const slug = !getCookie("Slug") ? getRandomSlug(city) : getCookie("Slug");
     fetchDetails(slug);
     fetchImage(slug);
   }, [city]);

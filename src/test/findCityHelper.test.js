@@ -6,6 +6,6 @@ const funcFirstParam = {
 };
 const funcSecondParam = "S";
 
-it("searches for a given letter in a city object", () => {
+it("searches for an given letter in a city object", () => {
   expect(findCityHelper(funcFirstParam, funcSecondParam)).toEqual(true);
 });

@@ -5,7 +5,6 @@ import cn from "classnames";
 import { connect } from "react-redux";
 
 import {
-  fetchCityInfo,
   fetchDetails,
   fetchImage,
   fetchSalaries,
@@ -81,6 +80,7 @@ const SearchResults = ({
 };
 
 SearchResults.propTypes = {
+  getGeonameId: string,
   city: array,
   type: string,
   fetchDetails: func,
@@ -96,7 +96,6 @@ const mapStateToProps = state => ({ state });
 const mapDispatchToProps = dispatch => ({
   fetchDetails: slug => dispatch(fetchDetails(slug)),
   fetchImage: slug => dispatch(fetchImage(slug)),
-  fetchCityInfo: geonamesId => dispatch(fetchCityInfo(geonamesId)),
   fetchSalaries: slug => dispatch(fetchSalaries(slug)),
   fetchTaxation: slug => dispatch(fetchTaxation(slug)),
 });

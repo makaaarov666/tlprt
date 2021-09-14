@@ -8,8 +8,18 @@ import selectors from "reducers/selectors";
 import Layout from "components/common/Layout";
 import CityLayout from "components/citypage/CityLayout";
 
-const CityInfo = ({ geonameId, fetchCityInfo, image, nameCity }) => {
-  const geonamesNumber = geonameId.split(":")[1];
+import getSlugHelper from "helpers/getSlugHelper";
+
+import setCookie from "helpers/cookies/setCookie";
+
+const CityInfo = ({ geonameId, fetchCityInfo, image, nameCity, slugCity }) => {
+  const [, geonamesNumber] = geonameId.split(":");
+
+  useEffect(() => {
+    const slugNumber = getSlugHelper(slugCity);
+    setCookie("Slug", slugNumber);
+  }, [slugCity]);
+  //useEffect перенести max-age(убрать 3 параметр из функции setCookie)
 
   useEffect(() => {
     if (!geonamesNumber) {
@@ -30,9 +40,11 @@ CityInfo.propTypes = {
   geonameId: string,
   fetchCityInfo: func,
   image: string,
+  slugCity: string,
 };
 
 const mapStateToProps = state => ({
+  slugCity: selectors.getSlugCity(state),
   nameCity: selectors.getNameCity(state),
   geonameId: selectors.getGeonameId(state),
   image: selectors.getImage(state),

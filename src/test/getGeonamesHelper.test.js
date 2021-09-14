@@ -5,6 +5,6 @@ const funcFirstParam = {
   name: "Africa",
 };
 
-it("searches for a given letter in a city object", () => {
+it("Getting geonames from a string", () => {
   expect(getGeonamesHelper(funcFirstParam)).toEqual(["geonames:AF"]);
 });

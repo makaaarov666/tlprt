@@ -42,7 +42,7 @@ const updateCityList = (state, action) => {
 };
 
 const getGeonameId = (state, action) => {
-  const geonameId = getGeonameIdHelper(action);
+  const geonameId = getGeonameIdHelper(action.payload);
 
   return {
     ...state,

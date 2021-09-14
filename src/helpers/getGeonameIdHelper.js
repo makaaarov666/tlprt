@@ -1,3 +1,3 @@
-const getGeonameIdHelper = action => action.payload.split("/")[5];
+const getGeonameIdHelper = action => action.split("/")[5];
 
 export default getGeonameIdHelper;

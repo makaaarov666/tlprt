@@ -5,6 +5,6 @@ const funcFirstParam = {
   payload: "https://api.teleport.org/api/cities/geonameid:524901/",
 };
 
-it("searches for a given letter in a city object", () => {
+it("getting geonamesId from string", () => {
   expect(getGeonameIdHelper(funcFirstParam)).toEqual("geonameid:524901");
 });

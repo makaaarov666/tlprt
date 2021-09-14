@@ -10,6 +10,8 @@ const selectors = {
   getTax: state => state.cityDetails.cityInfo.taxations.tax,
   getLocation: state => state.cityDetails.cityInfo.info.location.latlon,
   getLoadingCity: state => state.cityList.loading,
+  getSlugCity: state =>
+    state.cityDetails.cityInfo.info._links["city:urban_area"].href,
 };
 
 export default selectors;

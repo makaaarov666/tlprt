@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import selectors from "reducers/selectors";
-import { array, object } from "prop-types";
+import { array } from "prop-types";
 
 const getfilterData = (tax, tableConfig) => {
   const filterData = tax
@@ -16,11 +16,7 @@ const getfilterData = (tax, tableConfig) => {
       return <td key={taxation.id}>{rows}</td>;
     });
 
-  return (
-    <tr>
-      <th>{filterData}</th>
-    </tr>
-  );
+  return <tr>{filterData}</tr>;
 };
 
 const TableHeader = ({ tax, tableConfig }) => (
@@ -29,7 +25,7 @@ const TableHeader = ({ tax, tableConfig }) => (
 
 TableHeader.propTypes = {
   tax: array,
-  tableConfig: object,
+  tableConfig: array,
 };
 
 const mapStateToProps = state => ({
